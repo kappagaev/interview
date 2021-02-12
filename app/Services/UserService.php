@@ -33,6 +33,7 @@ class UserService
 
         $data['picture'] = $data['picture'] != null ? $this->savePicture($data['picture']):'default.png';
         $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+
         return $this->repository->save($data);
     }
 
